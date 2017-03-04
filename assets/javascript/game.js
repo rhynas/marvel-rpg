@@ -84,7 +84,8 @@ $(document).ready(function(){
 
 	// The player chooses an opponent by clicking on an enemy's picture.
 	$(document).on('click', '.enemies', function(){
-		opponent = $(this).data("info")
+		opponent = $(this).data("info");
+		// $(opponent).hide().bind('#dEnemies');
 		console.log(opponent);
 		$('#dDefenderArea').html(appendImage(opponent,'opponentImage'));
 		// $('#dEnemies').remove(opponent);
@@ -96,7 +97,7 @@ $(document).ready(function(){
 		// 		$('#dEnemies').append(appendImage(fighters[i], 'enemies'));
 		// 	}
 		// };
-		// $('#dFighters').empty();
+		$('#dFighters').eq(opponent).hide();
 	});
 	// Once the player selects an opponent, that enemy is moved to 
 	//a defender area.
